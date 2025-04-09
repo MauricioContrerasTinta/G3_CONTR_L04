@@ -1,5 +1,5 @@
 package Lab04;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
 
 public class PythagorasTree extends JPanel{
@@ -26,7 +26,7 @@ public class PythagorasTree extends JPanel{
         int x2 = x + (int) (lado * Math.cos(Math.toRadians(angulo)));
         int y2 = y + (int) (lado * Math.sin(Math.toRadians(angulo)));
 
-        g.drawline(x, y, x2, y2);
+        g.drawLine(x, y, x2, y2);
 
         int nuevoLado = (int) (lado * 0.7);
         trazaArbol(g, x2, y2, nuevoLado, angulo -45, nivel -1);
