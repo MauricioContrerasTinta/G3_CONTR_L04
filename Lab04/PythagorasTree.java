@@ -1,5 +1,6 @@
 package Lab04;
 import javax.swing.JPanel;
+import java.awt.*;
 
 public class PythagorasTree extends JPanel{
     private int profundidad;
@@ -13,7 +14,7 @@ public class PythagorasTree extends JPanel{
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
-        g2d setColor(Color.BLACK);
+        g2d.setColor(Color.BLACK);
         g2d.fillRect(0, 0, getWidth(), getHeight());
         g2d.setColor(Color.GREEN);
 
