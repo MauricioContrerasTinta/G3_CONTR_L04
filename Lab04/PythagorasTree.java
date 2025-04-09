@@ -8,5 +8,10 @@ public class PythagorasTree extends JPanel{
         this.profundidad=profundidad;
         setPreferredSize(new Dimension(800, 800));
     }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+    }
     
 }
