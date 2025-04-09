@@ -25,6 +25,12 @@ public class PythagorasTree extends JPanel{
         if(nivel == 0 || lado<2) return;
         int x2 = x + (int) (lado * Math.cos(Math.toRadians(angulo)));
         int y2 = y + (int) (lado * Math.sin(Math.toRadians(angulo)));
+
+        g.drawline(x, y, x2, y2);
+
+        int nuevoLado = (int) (lado * 0.7);
+        trazaArbol(g, x2, y2, nuevoLado, angulo -45, nivel -1);
+        trazaArbol(g, x2, y2, nuevoLado, angulo +45, nivel -1);
     }
     
 }
