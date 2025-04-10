@@ -15,4 +15,17 @@ public class SubconjuntoPotenciasRestringidas {
         String key = index + "-" + objetivo;    // Creamos una clave única para memoización con el índice actual y el objetivo restante
         if (memo.containsKey(key)) return memo.get(key);    // Si ya evaluamos esta combinación antes, devolvemos el resultado almacenado
 
-       
+        int actual = nums[index];   // Tomamos el valor actual del arreglo
+
+        // Si el índice está en la lista de excluidos, lo saltamos obligatoriamente
+        if (excluidos.contains(index)) {
+            return puedeAlcanzarObjetivo(nums, index + 1, objetivo, obligatorios, excluidos, memo);
+        }
+        
+        // Si el índice es obligatorio, se debe incluir y continuar restando su valor al objetivo
+        if (obligatorios.contains(index)) {
+            return puedeAlcanzarObjetivo(nums, index + 1, objetivo, obligatorios, excluidos, memo);
+        }
+
+     
+}
