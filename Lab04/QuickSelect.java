@@ -1,4 +1,7 @@
 package Lab04;
+
+import java.util.Random;
+
 public class QuickSelect {
     public static int hallarMenor(int[] arr, int k){
         return quickSelect(arr, 0, arr.length - 1, k -1);
@@ -20,5 +23,11 @@ public class QuickSelect {
         } else {
             return quickSelect(arr, pivote + 1, rigth, k);
         }
+    }
+    
+    private static void cambio(int[] arr, int i, int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
