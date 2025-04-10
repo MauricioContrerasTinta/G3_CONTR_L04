@@ -27,5 +27,20 @@ public class SubconjuntoPotenciasRestringidas {
             return puedeAlcanzarObjetivo(nums, index + 1, objetivo, obligatorios, excluidos, memo);
         }
 
-     
+        // Caso general probamos dos caminos
+        boolean sinIncluir = puedeAlcanzarObjetivo(nums, index + 1, objetivo, obligatorios, excluidos, memo);
+
+        boolean incluir = false;
+        if (actual <= objetivo) {
+            incluir = puedeAlcanzarObjetivo(nums, index + 1, objetivo - actual, obligatorios, excluidos, memo);
+        }
+
+        // Guardamos el resultado en la tabla de memoización
+        boolean resultado = sinIncluir || incluir;
+        memo.put(key, resultado);
+        return resultado;   // Retornamos si alguna de las dos opciones fue exitosa
+    }
+    
+    
+    }
 }
