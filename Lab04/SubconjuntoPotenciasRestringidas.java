@@ -41,6 +41,32 @@ public class SubconjuntoPotenciasRestringidas {
         return resultado;   // Retornamos si alguna de las dos opciones fue exitosa
     }
     
-    
+    public static boolean verificar(int[] entrada) {
+        int n = entrada[0];
+
+
+        int[] nums = Arrays.copyOfRange(entrada, 1, 1 + n);
+        
+        int objetivo = entrada[1 + n];
+
+        Set<Integer> obligatorios = new HashSet<>();
+        Set<Integer> excluidos = new HashSet<>();
+
+
+        for (int i = 0; i < nums.length; i++) {
+            if (esPotenciaDeDos(nums[i])) {
+                obligatorios.add(i);
+            }
+            if (nums[i] % 5 == 0 && i + 1 < nums.length && nums[i + 1] % 2 == 1) {
+                excluidos.add(i);
+            }
+         }   
+
+        int sumaObligatorios = 0;
+        for (int idx : obligatorios) {
+        if (excluidos.contains(idx)) return false; // Conflicto: obligatorio pero excluido
+            sumaObligatorios += nums[idx];
     }
+
+   
 }
