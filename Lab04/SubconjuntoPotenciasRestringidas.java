@@ -68,5 +68,11 @@ public class SubconjuntoPotenciasRestringidas {
             sumaObligatorios += nums[idx];
     }
 
-   
-}
+    int nuevoObjetivo = objetivo - sumaObligatorios;
+    if (nuevoObjetivo < 0) return false;
+
+    Map<String, Boolean> memo = new HashMap<>();
+    return puedeAlcanzarObjetivo(nums, 0, nuevoObjetivo, obligatorios, excluidos, memo);
+
+    }
+
