@@ -6,6 +6,7 @@ public class dpSolution {
         
         for (int i = 1; i <= rodLength; i++) {
             int tmpMax = -1;  
+    
             for (int j = 0; j < i; j++) {
                 tmpMax = Math.max(tmpMax, values[j] + subSolutions[i - j - 1]);
             }
@@ -14,4 +15,9 @@ public class dpSolution {
         return subSolutions[rodLength];
     }
 
+    public static void main(String[] args) {
+        int[] values = new int[]{3, 7, 1, 3, 9};  
+        int rodLength = values.length;  
+        System.out.println("El valor máximo: " + getValue(values, rodLength));
+    }
 }
