@@ -17,6 +17,7 @@ public class BinarySearchIterativo {
     }
 
     public static void main(String[] args){
+        BinarySearchIterativo ob = new BinarySearchIterativo();
         
         
     }
