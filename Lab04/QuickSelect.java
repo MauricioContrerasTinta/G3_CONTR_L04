@@ -48,4 +48,12 @@ public class QuickSelect {
         return almacen;
     }
 
+    public static void main(String[] args) {
+        int[] arr1 = {4,2,7,10,4,17};
+
+        int k = 3;
+
+        int resultado = hallarMenor(arr1, k);
+        System.out.println("El " + k + "-enesimo numero es " + resultado);
+    }
 }
