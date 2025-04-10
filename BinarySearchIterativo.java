@@ -20,7 +20,10 @@ public class BinarySearchIterativo {
         BinarySearchIterativo ob = new BinarySearchIterativo();
         int arr[] = { 1, 2, 3, 4, 5 };
         int x = 3;
-        
+        if (position == -1)
+        System.out.println("Element not present");
+        else
+        System.out.println("Element found at index:" + position);
     }
 }
 
