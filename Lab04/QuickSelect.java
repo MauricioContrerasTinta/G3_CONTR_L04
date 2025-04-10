@@ -24,10 +24,28 @@ public class QuickSelect {
             return quickSelect(arr, pivote + 1, rigth, k);
         }
     }
-    
+
     private static void cambio(int[] arr, int i, int j){
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
+
+    private static int dividir(int[] arr, int left, int rigth, int pivote){
+        int valorPivote = arr[pivote];
+        cambio(arr, pivote, rigth);
+        int almacen = left;
+
+        for(int i = left; i < rigth; i++){
+            if (arr[i] < valorPivote) {
+                cambio(arr, almacen, i);
+                almacen++;
+            }
+        }
+
+        cambio(arr, rigth, almacen);
+
+        return almacen;
+    }
+
 }
