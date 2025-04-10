@@ -7,7 +7,7 @@ public class BinarySearchIterativo {
 
         if (arr[mid] == x)
             return mid;
-            
+
         if (arr[mid] < x)
             lo = mid + 1;
         else
@@ -15,5 +15,11 @@ public class BinarySearchIterativo {
         }
             return -1;
     }
+
+    public static void main(String[] args){
+        
+        
+    }
 }
+
 
