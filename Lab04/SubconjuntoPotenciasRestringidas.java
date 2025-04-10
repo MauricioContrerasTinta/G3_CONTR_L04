@@ -76,3 +76,18 @@ public class SubconjuntoPotenciasRestringidas {
 
     }
 
+    public static void main(String[] args) {
+        int[][] entradas = {
+            {5, 2, 4, 8, 10, 3, 14},  //true
+            {5, 4, 8, 10, 3, 5, 27},    //false
+            {5, 4, 8, 10, 3, 6, 27},   //false
+            {5, 2, 16, 5, 7, 10, 33},   //false
+            {5, 2, 16, 5, 3, 10, 33},   //false
+            {4, 2, 5, 1, 6, 13}        //false
+        };
+
+        for (int[] entrada : entradas) {
+            System.out.println(verificar(entrada));
+        }
+    }
+}
